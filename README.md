@@ -10,7 +10,6 @@ This is a web application that will make it easier for the user to find people t
 1. User can navigate the website using the navbar to get to other portions of the site.
 2. User can make a forum post to look for teammates to play with.
 3. User can Look at all the champions from the game and see their respective attributes and archtype.
-4. ![Visual project specs](/src/assets/blueprints/matcher.jpg)
 
 ## Build
 
