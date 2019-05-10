@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './Nav';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends React.Component {
           </style>
         </div>
         <div>
-
+          <Nav />
         </div>
       </div>
     );
