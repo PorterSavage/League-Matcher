@@ -22,13 +22,46 @@ function CreatePost(props) {
       <div>
         <style>
           {`
+            textarea {
+              border: 2px solid #ddd;
+              box-shadow: none;
+              height: 200px;
+              width: 50%;
+              margin-bottom: 1em;
+            }
 
+            .form {
+              margin-top: 75px;
+              text-align: center;
+            }
+
+            .pure-form label {
+              margin: 1em 0 0;
+              font-weight: bold;
+              font-size: 100%;
+
+            }
+          
+            .pure-form input[type] {
+              border: 2px solid #ddd;
+              box-shadow: none;
+              font-size: 100%;
+              width: 50%;
+              margin-bottom: 1em;
+            }
+            .pure-button-primary {
+              background: white;
+              color: #1f8dd6;
+              border-radius: 5px;
+              font-size: 120%;
+              border: 2px solid #ddd;
+            }
           `}
         </style>
       </div>
       <div className="center">
         <div className="form">
-          <form onSubmit={handleNewPostSubmission}>
+          <form className="pure-form" onSubmit={handleNewPostSubmission}>
             <label htmlFor="title">Title: </label>
             <input
               type="text"
@@ -40,12 +73,14 @@ function CreatePost(props) {
               type="text"
               ref={(input) => { roles = input; }}
             />
+            <br/>
             <label htmlFor="body">Body: </label>
             <textarea
               name="body"
               ref={(textarea) => { body = textarea; }}
             />
-            <button id="post" type="submit">Post</button>
+            <br />
+            <button className="pure-button-primary" id="post" type="submit">Post</button>
           </form>
         </div>
       </div>
