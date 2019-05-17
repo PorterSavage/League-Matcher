@@ -9,7 +9,9 @@ function Forum(props) {
       <div>
         <style>
           {`
-
+            .forumDiv {
+              text-align: center;
+            }
           `}
         </style>
       </div>

@@ -9,9 +9,14 @@ function Champions(props) {
       <div>
         <style>
           {`
-
+            .champions {
+              text-align: center;
+            }
           `}
         </style>
+      </div>
+      <div className="champions">
+        <h1>Champions</h1>
       </div>
       <div className="grid">
         <div className="champions">

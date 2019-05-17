@@ -22,6 +22,10 @@ function CreatePost(props) {
       <div>
         <style>
           {`
+            .header {
+              text-align: center;
+            }
+
             textarea {
               border: 2px solid #ddd;
               box-shadow: none;
@@ -58,6 +62,9 @@ function CreatePost(props) {
             }
           `}
         </style>
+      </div>
+      <div className="header">
+        <h1>Create Thread</h1>
       </div>
       <div className="center">
         <div className="form">
