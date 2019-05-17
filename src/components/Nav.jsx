@@ -16,7 +16,8 @@ function Nav() {
             .fixed {
               position: fixed;
               width: 100%;
-              margin-left: ;
+              margin-left: -8px;
+              margin-top: -8px;
             }
             button {
               background-color: transparent;

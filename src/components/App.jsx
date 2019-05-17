@@ -1,42 +1,33 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Nav from './Nav';
+import Home from './Home';
+import Champions from './Champions';
+import Forum from './Forum';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      champions: [],
-      isLoaded: false,
-    };
-  }
-
-  componentDidMount() {
-    fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
-      .then(res => res.json())
-      .then((json) => {
-        this.setState({
-          isLoaded: true,
-          champions: json,
-        });
-      });
-  }
-
-  render() {
-    return (
+function App() {
+  return (
+    <div>
       <div>
-        <div>
-          <style>
-            {`
-  
-            `}
-          </style>
-        </div>
-        <div>
-          <Nav />
-        </div>
+        <style>
+          {`
+
+          `}
+        </style>
       </div>
-    );
-  }
+      <div className="nav">
+        <Nav />
+      </div>
+      <div className="page">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/champions" component={Champions} />
+          <Route path="/forum" component={Forum} />
+        </Switch>
+      </div>
+    </div>
+  );
 }
+
 
 export default App;
