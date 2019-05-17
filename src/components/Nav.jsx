@@ -9,7 +9,7 @@ function Nav() {
           {`
             .nav {
               display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
               align-content: center;
               background-image: linear-gradient(white, #68DCDD);
             }
@@ -46,6 +46,9 @@ function Nav() {
           </div>
           <div>
             <Link to="/Forum"><button type="button">Forum</button></Link>
+          </div>
+          <div>
+            <Link to="/createpost"><button type="button">Create Post</button></Link>
           </div>
         </nav>
       </div>

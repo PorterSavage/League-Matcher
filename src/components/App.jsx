@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Home from './Home';
 import Champions from './Champions';
 import Forum from './Forum';
+import CreatePost from './CreatePost';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/champions" component={Champions} />
           <Route path="/forum" component={Forum} />
+          <Route path="/createpost" component={CreatePost} />
         </Switch>
       </div>
     </div>
