@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from './Nav';
@@ -6,29 +7,53 @@ import Champions from './Champions';
 import Forum from './Forum';
 import CreatePost from './CreatePost';
 
-function App() {
-  return (
-    <div>
-      <div>
-        <style>
-          {`
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postList: [],
+    };
+    this.handleAddingPostToList = this.handleAddingPostToList.bind(this);
+  }
 
-          `}
-        </style>
+  handleAddingPostToList(post) {
+    const { postList } = this.state;
+    const newPostList = postList.slice();
+    newPostList.push(post);
+    this.setState({ postList: newPostList });
+  }
+
+  render() {
+    const { postList } = this.state;
+    return (
+      <div>
+        <div>
+          <style>
+            {`
+  
+            `}
+          </style>
+        </div>
+        <div className="nav">
+          <Nav />
+        </div>
+        <div className="page">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/champions" component={Champions} />
+            <Route
+              path="/forum"
+              render={props => <Forum {...props} postList={postList} />}
+            />
+            <Route
+              path="/createpost"
+              render={props => <CreatePost {...props} onAddPostToList={e => this.handleAddingPostToList(e)} />}
+            />
+          </Switch>
+        </div>
       </div>
-      <div className="nav">
-        <Nav />
-      </div>
-      <div className="page">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/champions" component={Champions} />
-          <Route path="/forum" component={Forum} />
-          <Route path="/createpost" component={CreatePost} />
-        </Switch>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 

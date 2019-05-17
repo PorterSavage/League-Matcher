@@ -1,4 +1,6 @@
 import React from 'react';
+import v4 from 'uuid';
+import PropTypes from 'prop-types';
 
 function CreatePost(props) {
   let title = null;
@@ -7,7 +9,12 @@ function CreatePost(props) {
 
   function handleNewPostSubmission(e) {
     e.preventDefault();
-    
+    props.onAddPostToList({
+      title: title.value, roles: roles.value, body: body.value, id: v4(),
+    });
+    title.value = '';
+    roles.value = '';
+    body.value = '';
   }
 
   return (
@@ -21,11 +28,11 @@ function CreatePost(props) {
       </div>
       <div className="center">
         <div className="form">
-          <Form onSubmit={handleNewPostSubmission}>
+          <form onSubmit={handleNewPostSubmission}>
             <label htmlFor="title">Title: </label>
             <input
               type="text"
-              ref={(input) => { title = input; }} 
+              ref={(input) => { title = input; }}
             />
             <br />
             <label htmlFor="roles">Roles: </label>
@@ -39,11 +46,15 @@ function CreatePost(props) {
               ref={(textarea) => { body = textarea; }}
             />
             <button id="post" type="submit">Post</button>
-          </Form>
+          </form>
         </div>
       </div>
     </div>
   );
 }
+
+CreatePost.propTypes = {
+  onAddPostToList: PropTypes.func.isRequired,
+};
 
 export default CreatePost;
