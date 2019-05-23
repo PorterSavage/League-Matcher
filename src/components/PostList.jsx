@@ -10,7 +10,9 @@ function PostList(props) {
       <div>
         <style>
           {`
-
+            .post {
+              text-align: center;
+            }
           `}
         </style>
       </div>

@@ -23,7 +23,6 @@ class ChampionList extends React.Component {
 
   render() {
     const { isLoaded, champions } = this.state;
-
     if (!isLoaded) {
       return <div>Loading...</div>;
     }
@@ -35,7 +34,7 @@ class ChampionList extends React.Component {
               .championPage {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                border: 1px solid black;
+                border: 1px solid #F1D773;
                 text-align: center;
               }
             `}
@@ -44,10 +43,13 @@ class ChampionList extends React.Component {
         <div className="championPage">
           {champions.map(champion => (
             <Champion
+              onChampionClicked={this.handleChampionDescription}
+              championId={champion.id}
               key={champion.id}
               name={champion.name}
               title={champion.title}
               image={champion.image.full}
+              description={champion.blurb}
             />
           ))}
         </div>

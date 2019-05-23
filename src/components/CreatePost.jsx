@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import v4 from 'uuid';
 import PropTypes from 'prop-types';
@@ -24,6 +26,8 @@ function CreatePost(props) {
           {`
             .header {
               text-align: center;
+              color: #F1D773;
+              text-shadow: 2px 2px black;
             }
 
             textarea {
@@ -43,6 +47,8 @@ function CreatePost(props) {
               margin: 1em 0 0;
               font-weight: bold;
               font-size: 100%;
+              color: #F1D773;
+              text-shadow: 2px 2px black;
 
             }
           
@@ -80,7 +86,7 @@ function CreatePost(props) {
               type="text"
               ref={(input) => { roles = input; }}
             />
-            <br/>
+            <br />
             <label htmlFor="body">Body: </label>
             <textarea
               name="body"

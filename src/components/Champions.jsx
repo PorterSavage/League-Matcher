@@ -11,6 +11,8 @@ function Champions(props) {
           {`
             .champions {
               text-align: center;
+              color: #F1D773;
+              text-shadow: 2px 2px black;
             }
           `}
         </style>

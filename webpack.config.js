@@ -32,21 +32,31 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]',
+          },
+        },
+      },
+      {
         test: /\.jsx?$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
           presets: [
-            ["es2015", {"modules": false}],
-            "react",
+            ['es2015', { 'modules': false }],
+            'react',
           ],
           plugins: [
-            "react-hot-loader/babel",
-            "styled-jsx/babel"
-          ]
-        }
-      }
-    ]
+            'react-hot-loader/babel',
+            'styled-jsx/babel',
+          ],
+        },
+      },
+    ],
   },
 
   plugins: [

@@ -30,15 +30,11 @@ class App extends React.Component {
         <div>
           <style>
             {`
-              body {
-                color: #F1D773;
-                opacity: .8;
-              }
-
               html {
                 background-image: url("https://stmed.net/sites/default/files/league-of-legends-hd-wallpapers-33299-8008243.jpg");
                 background-size: cover;
                 background-repeat: no-repeat;
+
               }
             `}
           </style>

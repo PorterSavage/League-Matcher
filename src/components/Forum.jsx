@@ -11,6 +11,9 @@ function Forum(props) {
           {`
             .forumDiv {
               text-align: center;
+              color: #F1D773;
+              opacity: 1.0;
+              text-shadow: 2px 2px black;
             }
           `}
         </style>
