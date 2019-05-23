@@ -13,13 +13,15 @@ function Champion(props) {
       <div>
         <style>
           {`
-
+            img:hover {
+              cursor: pointer;
+            }
           `}
         </style>
       </div>
       <div className="championDiv">
         <h2>{name}</h2>
-        <img src={'http://ddragon.leagueoflegends.com/cdn/9.3.1/img/champion/' + image} alt="api call" />
+        <img src={'http://ddragon.leagueoflegends.com/cdn/9.3.1/img/champion/' + image} alt="api call" onClick={() => props.onChampionClicked(props.description)} />
         <br />
         <em>{title}</em>
         <hr />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Champion from './Champion';
+import ChampionModal from './ChampionModal';
 
 class ChampionList extends React.Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class ChampionList extends React.Component {
     this.state = {
       champions: [],
       isLoaded: false,
+      championName: null,
+      modalIsOpen: false,
     };
+    this.handleChampionDescription = this.handleChampionDescription.bind(this);
   }
 
   componentWillMount() {
@@ -19,6 +23,14 @@ class ChampionList extends React.Component {
           champions: Object.values(json.data),
         });
       });
+  }
+
+  handleChampionDescription(userClickedImage) {
+    let clickedChampionImage = userClickedImage;
+    this.setState({
+      championName: clickedChampionImage,
+      modalIsOpen: true,
+    });
   }
 
   render() {
@@ -37,8 +49,18 @@ class ChampionList extends React.Component {
                 border: 1px solid #F1D773;
                 text-align: center;
               }
+              
+              .champDescription {
+                text-shadow: 1px 1px gold;
+                color: black;
+              }
             `}
           </style>
+        </div>
+        <div className="champDescription">
+          <ChampionModal
+            championName={this.state.championName} 
+          />
         </div>
         <div className="championPage">
           {champions.map(champion => (
