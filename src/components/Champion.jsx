@@ -19,7 +19,7 @@ function Champion(props) {
       </div>
       <div className="championDiv">
         <h2>{name}</h2>
-        <img src={'http://ddragon.leagueoflegends.com/cdn/9.3.1/img/champion/' + image} alt="api call" onClick={props.onChampionClicked(name)} />
+        <img src={'http://ddragon.leagueoflegends.com/cdn/9.3.1/img/champion/' + image} alt="api call" />
         <br />
         <em>{title}</em>
         <hr />
